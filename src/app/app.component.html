@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Hot Weather Widget</h1>
+<div class="element">
+	<div class="element-left">
+		<div class="element-bg-img"><img [src]="_currentResort.firstSightUrl" alt="" class="img-responsive"> </div>
+		<div class="element-left-bottom">
+			<div class="ele-strip">
+				<ul>
+					<li class="anc-bor"><a href="#">Weather</a></li>
+				</ul>
+			</div>
+			<weather-resorts-list [resorts]="_resorts" (changeResort)="_currentResort=$event"></weather-resorts-list>
+		</div>
+	</div>
+	<div class="element-right">
+		<weather-resort-temperature [resort]="_currentResort"></weather-resort-temperature>
+		<weather-resort-followers [resort]="_currentResort"></weather-resort-followers>
+	</div>
+	<div class="clear"> </div>
+</div>
+<div class="copy-right">
+	<p>© 2015 Hot Weather Widget. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+</div>
