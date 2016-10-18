@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import Resort from '../entities/resort';
+import Resort from '../shared/entities/resort';
 
 @Component({
   selector: 'weather-resort-temperature',

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import Resort from '../entities/resort';
+import Resort from '../shared/entities/resort';
+import { ResortType } from '../shared/entities/resort-type';
 
 @Component({
   selector: 'weather-resorts-list',
@@ -9,6 +10,8 @@ import Resort from '../entities/resort';
 export class ResortsListComponent  {
   @Input()
   public resorts:Resort[];
+  @Input()
+  public resortType:ResortType;
   @Output()
   public changeResort:EventEmitter<Resort> = new EventEmitter();
 

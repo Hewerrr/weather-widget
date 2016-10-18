@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import Resort from './entities/resort';
+import Resort from './shared/entities/resort';
+import {ResortType} from './shared/entities/resort-type';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,12 @@ import Resort from './entities/resort';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private _currentResort: Resort;
-  private _resorts: Resort[];
+  public currentResort: Resort;
+  public selectedResortType: ResortType;
+  public resorts: Resort[];
 
   constructor() {
-    this._resorts = [
+    this.resorts = [
       {
         id: 1,
         address: 'address 1',
@@ -21,7 +23,8 @@ export class AppComponent {
         airTemperature: 20,
         waterTemperature: 15,
         followersCount: 10,
-        followingCount: 40
+        followingCount: 40,
+        resortType: ResortType.Beach
       },
       {
         id: 2,
@@ -32,7 +35,8 @@ export class AppComponent {
         airTemperature: 21,
         waterTemperature: 16,
         followersCount: 100,
-        followingCount: 400
+        followingCount: 400,
+        resortType: ResortType.GoodWeather
       },
       {
         id: 3,
@@ -43,9 +47,39 @@ export class AppComponent {
         airTemperature: 22,
         waterTemperature: 17,
         followersCount: 160,
-        followingCount: 430
+        followingCount: 430,
+        resortType: ResortType.GoodWeather
+      },
+      {
+        id: 4,
+        address: 'address 4',
+        telephone: '+1285 968 686',
+        firstSightUrl: 'http://tampereclub.ru/uploads/posts/2013-08/1377630027_rybalka.jpg',
+        secondSightUrl: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTLkboGwfs2DD7Zp_73SFOAGswOvXV1w-Rv7b5DeT9chogkMJvu',
+        airTemperature: 21,
+        waterTemperature: 16,
+        followersCount: 110,
+        followingCount: 700,
+        resortType: ResortType.Fishing
+      },
+      {
+        id: 5,
+        address: 'address 5',
+        telephone: '+1285 968 687',
+        firstSightUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRRgBUZ0EJ8ikHlZxgi7dU8E_DipC4TUOsQ4UvxfR40pmzNHO4g3g',
+        secondSightUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7svRywSGgdeSeVtiprJg14eNKjmU5egh35Mcu2kWOahyS2nhnvw',
+        airTemperature: 22,
+        waterTemperature: 17,
+        followersCount: 160,
+        followingCount: 40,
+        resortType: ResortType.Fishing
       }
     ];
-    this._currentResort = this._resorts[0];
+    this.currentResort = this.resorts[0];
+    this.selectedResortType = ResortType.Beach;
+  }
+
+  private filterByType(resoltType: ResortType) {
+    this.selectedResortType = resoltType;
   }
 }

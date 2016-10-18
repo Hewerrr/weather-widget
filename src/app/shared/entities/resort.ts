@@ -1,3 +1,5 @@
+import { ResortType } from './resort-type';
+
 export default class Resort {
         public id: number;
         public address: string;
@@ -8,4 +10,5 @@ export default class Resort {
         public waterTemperature: number;
         public followersCount: number;
         public followingCount: number;
+        public resortType: ResortType; 
 }

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ResortsListComponent } from './resorts-list/resorts-list.component';
 import { ResortTemperatureComponent } from './resort-temperature/resort-temperature.component';
 import { ResortFollowersComponent } from './resort-followers/resort-followers.component';
+import { ResortTypePipe } from './shared/pipes/resort-type.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResortsListComponent,
     ResortTemperatureComponent,
-    ResortFollowersComponent
+    ResortFollowersComponent,
+    ResortTypePipe
   ],
   imports: [
     BrowserModule,

@@ -3,12 +3,13 @@
 	<span class="line"> </span>
 	<div class="activity_box">
 		<div class="scrollbar" id="style-2">
-			<div *ngFor="let resort of resorts" class="activity-row">
+			<!--TODO: вынести в отдельный компонент-->
+			<div *ngFor="let resort of resorts | resortType:resortType" class="activity-row">
 				<div class="activity-desc">
 					<h5>Resort Address</h5>
 					<p>{{resort.address}}</p>
 					<h6>{{resort.telephone}}</h6>
-          <button (click)="emitChangeResort(resort)">Show</button>
+					<button (click)="emitChangeResort(resort)">Show</button>
 				</div>
 				<div class="activity-img">
 					<ul>

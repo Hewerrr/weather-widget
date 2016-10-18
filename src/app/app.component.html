@@ -1,19 +1,21 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
 	<div class="element-left">
-		<div class="element-bg-img"><img [src]="_currentResort.firstSightUrl" alt="" class="img-responsive"> </div>
+		<div class="element-bg-img"><img [src]="currentResort.firstSightUrl" alt="" class="img-responsive"> </div>
 		<div class="element-left-bottom">
 			<div class="ele-strip">
 				<ul>
-					<li class="anc-bor"><a href="#">Weather</a></li>
+					<li class="anc-bor"><a href="#" (click)="filterByType(2)">Weather</a></li>
+					<li class="anc-bor"><a href="#" (click)="filterByType(1)">Beach</a></li>
+					<li class="anc-bor"><a href="#" (click)="filterByType(0)">Fishing</a></li>
 				</ul>
 			</div>
-			<weather-resorts-list [resorts]="_resorts" (changeResort)="_currentResort=$event"></weather-resorts-list>
+			<weather-resorts-list [resorts]="resorts" [resortType]="selectedResortType" (changeResort)="currentResort=$event"></weather-resorts-list>
 		</div>
 	</div>
 	<div class="element-right">
-		<weather-resort-temperature [resort]="_currentResort"></weather-resort-temperature>
-		<weather-resort-followers [resort]="_currentResort"></weather-resort-followers>
+		<weather-resort-temperature [resort]="currentResort"></weather-resort-temperature>
+		<weather-resort-followers [resort]="currentResort"></weather-resort-followers>
 	</div>
 	<div class="clear"> </div>
 </div>
