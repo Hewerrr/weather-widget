@@ -8,6 +8,7 @@ import { ResortsListComponent } from './resorts-list/resorts-list.component';
 import { ResortTemperatureComponent } from './resort-temperature/resort-temperature.component';
 import { ResortFollowersComponent } from './resort-followers/resort-followers.component';
 import { ResortTypePipe } from './shared/pipes/resort-type.pipe';
+import { ResortComponent } from './resorts-list/resort/resort.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ResortTypePipe } from './shared/pipes/resort-type.pipe';
     ResortsListComponent,
     ResortTemperatureComponent,
     ResortFollowersComponent,
-    ResortTypePipe
+    ResortTypePipe,
+    ResortComponent
   ],
   imports: [
     BrowserModule,
